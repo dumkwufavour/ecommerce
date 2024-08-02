@@ -2,10 +2,21 @@ const express = require("express");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const rateLimit = require("express-rate-limit");
+const cors = require("cors"); // Import cors
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
+
+// Configure CORS options (optional)
+const corsOptions = {
+  origin: 'http://localhost:3000', // Replace with your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+};
+
+// Use CORS middleware with options
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();

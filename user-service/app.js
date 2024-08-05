@@ -2,15 +2,15 @@ const express = require("express");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const rateLimit = require("express-rate-limit");
-const cors = require("cors"); // Import cors
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
 
-// Configure CORS options (optional)
+// Configure CORS options
 const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  origin: 'http://localhost:3000', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };

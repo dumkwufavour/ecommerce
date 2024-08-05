@@ -4,7 +4,7 @@ The User Service API handles user management tasks such as registration, login, 
 
 ## Base URL
 
-http://localhost:3000/api/v1
+http://localhost:4000/api/v1
 
 ## Endpoints
 

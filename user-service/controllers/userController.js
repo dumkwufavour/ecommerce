@@ -3,8 +3,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const validator = require("validator"); // Ensure validator is imported
-const transporter = require("../utils/emailService"); // Import the transporter
+const validator = require("validator"); 
+const transporter = require("../utils/emailService"); 
 
 // Register a new user
 exports.register = async (req, res) => {
@@ -130,7 +130,7 @@ exports.forgotPassword = async (req, res) => {
     user.resetTokenExpiry = Date.now() + 3600000; // Token valid for 1 hour
     await user.save();
 
-    const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+    const resetUrl = `http://localhost:4000/reset-password/${resetToken}`;
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: email,
